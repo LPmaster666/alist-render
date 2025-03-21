@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: alist
+    env: docker
+    region: ohio
+    plan: free
+    healthCheckPath: /
+    envVars:
+      - key: PUID
+        value: "1000"
+      - key: PGID
+        value: "1000"
+      - key: UMASK
+        value: "022"
+    ports:
+      - port: 5244
+        protocol: tcp
